@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+section#conteudo{
+    width: 1000px;
+    margin: auto;
+}
+
+iframe#frame-spec{
+    width: 480px;
+    height: 280px;
+    border: none;
+     }
+  
+  /*  configuracao que deu certo para que as imagens rolassem sem aparecer o scroll
+  dica - tiago ferreira - youtube curso em video aula sobre IFRAME
+   body{
+            font-family: Arial,sans-serif;
+            font-size: 10pt;
+            overflow-x: hidden;
+        }  
+        webkit - é o motor de renderizacao que tem maior compatibilidade com o html5 e css3
+        ::-webkit-scrollbar { 
+            display: none;  
+        }  
+
+
+
