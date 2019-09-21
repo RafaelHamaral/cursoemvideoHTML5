@@ -1,6 +1,5 @@
 # projeto-glass-html5
-Criação de Site
 
-Todo material deste repositório é de um curso online que estou fazendo na Curso em Vídeo.<br/>
-Site http://www.cursoemvideo.com <br/>
+https://www.cursoemvideo.com/course/curso-de-html5/
+
 Professor Gustavo Guanabara.
