@@ -1,24 +1,32 @@
-@charset "utf-8";
+@charset "UTF-8";
 
-div#tv-radio{
+div#tv-radio {
     width: 900px;
     height: 580px;
     margin: auto;
-    background: url("../_imagens/radio-tv.png") no-repeat;
+    background: url("../_imagens/radio-tv.png") no-repeat; /* apenas uma imagem de background*/
 }
 
-audio#musica{
-    display: block;
+audio#musica {
+    display:block;
     position: relative;
-    left: 573px;
-    top: 500px;
-    width: 300px;
+    left: 575px;
+    top: 490px;
+    width: 300px;   
 }
-
-video#filme{
+video#filme {
     display: block;
     position: relative;
-    left: 85px;
-    top: 90px;
+    left: 88px;  /*chegar para esquerda - diminuir o left*/
+    top: 70px;
     width: 440px;
 }
+
+/*para inserir video do youtube:
+
+ compartilhar >> incorporar >> copiar o codigo >> inserir no navegador.
+
+- se o video sair do ar o video incorporado tambem para de funionar ()
+- hospedando o video no site é necessario pagar para cada video incorporado.
+   - lembrando que para cada video são pelo menos três formatos que vou inserir (para o tipo de navegador)
+*/
