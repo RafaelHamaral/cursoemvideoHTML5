@@ -5,14 +5,6 @@
     <title>Tudo sobre Google Glass</title>
     <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
     <link rel="stylesheet" type="text/css" href="_css/form.css"/>
-    <script src="_javascript/funcoes.js"></script>
-    <script>
-        function calc_total() {
-            var qtd = parseInt(document.getElementById('idQtd').value);
-            tot = qtd * 1500;
-            document.getElementById('idPreco').value = tot;
-        }
-    </script>
 </head>
 
 <body>
@@ -53,85 +45,47 @@
                     <h3>Fale Conosco > Contato</h3>
                     <h1>Formulário de Contato</h1>
                     <h2>por Rafael H. Amaral</h2>
-                    <h3 class="direita">Atualizado em 19/Setembro/2019</h3>
+                    <h3 class="direita">Atualizado em 28/Setembro/2019</h3>
                 </hgroup>
             </header>
+<form>
+    <fieldset id="usuario">  <!-- conjunto de campos-->
+   <legend>Identificação do Usuário</legend> <!--titulo dentro do conjunto de campos-->
+    <p><label for="cNome"> Nome:</label> <input type="text" name="tNome" id="cNome" size = "20" maxlength ="30" placeholder="Nome Completo"/></p> <!-- size = quantidade que vai aparecer na caixa de texto, maxlenght = quantidade maxima de caracteres, placeholder = dica de conteudo da caixa de texto-->
+   <p><label for="cSenha">Senha:</label> <input type="password" name="tSenha" id="cSenha" size="8" maxlength ="8" placeholder="8 dígitos"/></p>
+   <p><label for="cMail">E-mail:</label> <input type="email" name="tMail" id="cMail" size = "20" maxlength = "50" placeholder="E-mail"/></p>
+    <fieldset id=sexo>
+   <legend>Sexo</legend>
+        <input type="radio" name="tSexo" checked id="cMasc" size="1"/> <label for="cMasc"> Masculino </label> <br>   <!-- se o id fossem iguais seria possivel selecionar os dois itens (masculino e feminino), o que estaria errado, br= cada item ficara em uma linha, checked = ja deixa o item marcado com a "bolinha"-->
+        <input type="radio" name="tSexo" id="cFem" size="1"/> <label for="cFem"> Feminino </label> 
+        <!--Label = nao é só uma funcionalidade pratica, é tambem questao de semantica-->
+    </fieldset>
+    <p> <label for="cData">Data de Nascimento:</label> <input type="date" name="tData" id="cData"/></p>
+    </fieldset>
+</fieldset>
+<fieldset id="endereco">
+<legend>Endereço do Usuário</legend>
+    <p><label for="cRua">Logradouro:</label> <input type="text" name="tRua" id="cRua" size="13" maxlength="80"placeholder="endereço"/></p>
+    <p><label for="cNum">Número:</label> <input type="number" name="tNum" id="cNum" size="4" maxlength="4" placeholder="número" min="0" max="99999"/></p>
+    <p><label for="cEst">Estado:</label> <input type="text" name="tEst" id="cEst" size="13" maxlength="20" placeholder="ex.: São Paulo"/></p>
+    <p> <label for="cCid">Cidade:</label> <input type="text" name="tCid" id="cCid" size="13" maxlength="30" placeholder="ex.: São Paulo"/></p>
+</fieldset id="mensagem">
+<fieldset>
+<legend>Mensagem do Usuário</legend>
+    Grau de Urgência:
+    Mensagem:
+</fieldset>
+<fieldset id="pedidos">
+    <legend>Quero um Google Glass</legend>
+    Gostaria de adquirir um Google Glass quando disponível
+    Cor:
+    Quantidade:
+    Preço Total: R$
+</fieldset>
 
-            <form method="post" id="formContato" action="mailto:teste@teste.com.br" oninput="calc_total();">
-                <fieldset id="usuario">
-                    <legend>Identificação do Usuário</legend><p>
-                    <p><label for="idNome">Nome: </label>
-                    <input type="text" name="nome" id="idNome" size="20"
-                               maxlength="30" placeholder=" Nome Completo"/></p>
-                    <p><label for="idSenha">Senha: </label>
-                    <input type="password" name="senha" id="idSenha" size="6"
-                               maxlength="10" placeholder=" Até 10 digitos"/></p>
-                    <p><label for="idEmail">E-mail: </label>
-                    <input type="email" name="email" id="idEmail" size="20"
-                               maxlength="30" placeholder=" Email"/></p>
-                <fieldset id="sexo">
-                    <legend>Sexo:</legend>
-                    <input type="radio" name="sexo" id="masc" checked/> <label for="masc">Masculino</label><br/>
-                    <input type="radio" name="sexo" id="fem"/> <label for="fem">Feminino</label>
-                </fieldset>
-                    <p><label for="idData">Data de Nascimento: </label>
-                        <input type="date" name="data" id="idData"/></p>
-                </fieldset>
 
-            <fieldset id="endereco">
-                <legend>Endereço do Usuário</legend>
-                <p><label for="idRua">Logradouro: </label>
-                    <input type="text" name="rua" id="idRua" size="20" maxlength="30" placeholder=" Rua, Avenida, Travessa, ... "></p>
-                <p><label for="idNum">Número: </label>
-                    <input type="number" name="num" id="idNum" min="0" max="99999"></p>
-                <p><label for="idEstado">Estado: </label>
-                <select name="Estado" id="idEstado">
-                    <optgroup label="Região Sudeste">
-                        <option value="SP">São Paulo</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="MG">Minas Gerais</option>
-                    </optgroup>
-                    <optgroup label="Região Sul">
-                        <option value="SC">Santa Catarina</option>
-                        <option value="RS">Rio Grande do Sul</option>
-                        <option value="PR">Paraná</option>
-                    </optgroup>
-                </select></p>
-                <p><label for="idCidade">Cidade: </label>
-                <input type="text" name="cidade" id="idCidade" size="20"
-                       maxlength="20" placeholder="Cidade" list="cidades"></p>
-                <datalist id="cidades">
-                    <option value="Santos"></option>
-                    <option value="Praia Grande"></option>
-                    <option value="São Vicente"></option>
-                    <option value="Guarujá"></option>
-                </datalist>
-            </fieldset>
-
-            <fieldset id="msg">
-                <legend>Mensagem do Usuário</legend>
-                <p><label for="idUrgencia">Grau de Urgência: </label>
-                Min<input type="range" name="urgencia" id="idUrgencia" min="0" max="10">Máx</p>
-                <p><label for="idMsg">Mensagem: </label>
-                <textarea name="mensagem" id="idMsg" cols="45" rows="5"
-                          placeholder=" Digite sua mensagem" ></textarea></p>
-            </fieldset>
-
-            <fieldset id="pedido">
-                <legend>Quero um Google Glass</legend>
-                <p><input type="checkbox" name="adquirir" id="idAdquirir">
-                    <label for="idAdquirir">Gostaria de adquirir um Google Glass quando disponível</label></p>
-                <p><label for="idCor">Cor: </label>
-                    <input type="color" name="cor" id="idCor"></p>
-                <p><label for="idQtd">Quantidade: </label>
-                    <input type="number" name="qtd" id="idQtd" min="1" max="10" value="0"></p>
-                <p><label for="idPreco">Preço Total: R$</label>
-                    <input type="text" name="preco" id="idPreco" placeholder=" Total a pagar" readonly></p>
-            </fieldset>
-            <!--<input type="submit" value="Enviar">-->
-            <input type="image" src="_imagens/botao-enviar.png" name="enviar" id="btnEnviar">
-            </form>
-        </article>
+[BOTÃO ENVIAR]
+</form>
     </section>
     <footer id="rodape">
        <p>Copyright &copy;2019 - by Rafael H Amaral <br/>
